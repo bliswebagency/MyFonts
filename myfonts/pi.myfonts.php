@@ -52,14 +52,76 @@ class Myfonts {
 		
 		
 		#$restricted = $this->EE->TMPL->fetch_param('restricted');
+		$path = $this->EE->TMPL->fetch_param('path');
+		$font = $this->EE->TMPL->fetch_param('font');	
 		
 		$this->CI->load->library('user_agent');
 		
 
 		if ($this->CI->agent->is_browser())
 		{
-		    $agent = $this->CI->agent->browser().' '.$this->CI->agent->version();
-		    return $agent;
+		    $agent = $this->CI->agent->browser();
+		    $version = $this->CI->agent->version();
+		    $format = "woff";
+		    
+		    if ($agent == "Firefox"){
+			    if ($version >= 3.6){
+	    		    $format = "woff";
+			    } else {
+	    		    $format = "data-css";
+			    }
+		    }
+		    
+		    if ($agent == "Opera"){
+			    if ($version >= 11.1){
+	    		    $format = "woff";
+			    } else {
+	    		    $format = "data-css";
+			    }
+		    }
+		    
+		    if ($agent == "Safari"){
+			    $format = "data-css";
+		    }
+		    
+		    if ($agent == "MobileSafari"){
+			    if ($version >= 4.2){
+	    		    $format = "data-css";
+			    } else {
+	    		    $format = "svg";
+			    }
+		    }
+		    
+		    if ($agent == "Chrome"){
+			    if ($version >= 6){
+	    		    $format = "woff";
+			    } else {
+	    		    $format = "data-css";
+			    }
+		    }
+		    
+		    if ($agent == "MSIE"){
+		    
+			    if ($version >= 9){
+	    		    $format = "woff";
+			    } else {
+	    		    $format = "eot";
+			    }
+		    
+		    }		    		    
+		    
+		    $v = '<style>
+
+			@font-face {font-family:"'.$font.'-Light";src:url("'.$path.'/'.$format.'/style_199448.woff") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-LightIt";src:url("'.$path.'/'.$format.'/style_199447.woff") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-BoldItalic";src:url("'.$path.'/'.$format.'/style_199446.woff") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-Bold";src:url("'.$path.'/'.$format.'/style_199444.woff") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-Regular";src:url("'.$path.'/'.$format.'/style_199443.woff") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-Italic";src:url("'.$path.'/'.$format.'/style_199441.woff") format("'.$format.'");} 
+			
+			</style>';
+		    
+		    return $v;
 		}
 		
 	}
