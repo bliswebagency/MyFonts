@@ -112,12 +112,12 @@ class Myfonts {
 		    
 		    $v = '<style>
 
-			@font-face {font-family:"'.$font.'-Light";src:url("'.$path.'/'.$format.'/style_199448.woff") format("'.$format.'");}
-			@font-face {font-family:"'.$font.'-LightIt";src:url("'.$path.'/'.$format.'/style_199447.woff") format("'.$format.'");}
-			@font-face {font-family:"'.$font.'-BoldItalic";src:url("'.$path.'/'.$format.'/style_199446.woff") format("'.$format.'");}
-			@font-face {font-family:"'.$font.'-Bold";src:url("'.$path.'/'.$format.'/style_199444.woff") format("'.$format.'");}
-			@font-face {font-family:"'.$font.'-Regular";src:url("'.$path.'/'.$format.'/style_199443.woff") format("'.$format.'");}
-			@font-face {font-family:"'.$font.'-Italic";src:url("'.$path.'/'.$format.'/style_199441.woff") format("'.$format.'");} 
+			@font-face {font-family:"'.$font.'-Light";src:url("'.$path.'/'.$format.'/style_199448.'.$format.'") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-LightIt";src:url("'.$path.'/'.$format.'/style_199447.'.$format.'") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-BoldItalic";src:url("'.$path.'/'.$format.'/style_199446.'.$format.'") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-Bold";src:url("'.$path.'/'.$format.'/style_199444.'.$format.'") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-Regular";src:url("'.$path.'/'.$format.'/style_199443.'.$format.'") format("'.$format.'");}
+			@font-face {font-family:"'.$font.'-Italic";src:url("'.$path.'/'.$format.'/style_199441.'.$format.'") format("'.$format.'");} 
 			
 			</style>';
 		    
