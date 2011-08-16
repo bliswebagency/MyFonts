@@ -44,6 +44,24 @@ class Myfonts {
 	public function __construct()
 	{
 		$this->EE =& get_instance();
+		$this->CI =& get_instance();		
+	} 
+	 
+	public function load()
+	{
+		
+		
+		#$restricted = $this->EE->TMPL->fetch_param('restricted');
+		
+		$this->CI->load->library('user_agent');
+		
+
+		if ($this->CI->agent->is_browser())
+		{
+		    $agent = $this->CI->agent->browser().' '.$this->CI->agent->version();
+		    return $agent;
+		}
+		
 	}
 	
 	// ----------------------------------------------------------------
