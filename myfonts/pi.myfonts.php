@@ -108,8 +108,11 @@ class Myfonts {
 	    		    $format = "eot";
 			    }
 		    
-		    }		    		    
+		    }
 		    
+		    if ($format == "data-css") $format = "ttf";		    		    
+		    
+		    if ($format == "woff" || $format == "svg"){
 		    $v = '<style>
 
 			@font-face {font-family:"'.$font.'-Light";src:url("'.$path.'/'.$format.'/style_199448.'.$format.'") format("'.$format.'");}
@@ -120,6 +123,18 @@ class Myfonts {
 			@font-face {font-family:"'.$font.'-Italic";src:url("'.$path.'/'.$format.'/style_199441.'.$format.'") format("'.$format.'");} 
 			
 			</style>';
+			} else {
+			$v = '<style>
+
+			@font-face {font-family:"'.$font.'-Light";src:url("'.$path.'/'.$format.'/style_199448.'.$format.'");}
+			@font-face {font-family:"'.$font.'-LightIt";src:url("'.$path.'/'.$format.'/style_199447.'.$format.'");}
+			@font-face {font-family:"'.$font.'-BoldItalic";src:url("'.$path.'/'.$format.'/style_199446.'.$format.'");}
+			@font-face {font-family:"'.$font.'-Bold";src:url("'.$path.'/'.$format.'/style_199444.'.$format.'");}
+			@font-face {font-family:"'.$font.'-Regular";src:url("'.$path.'/'.$format.'/style_199443.'.$format.'");}
+			@font-face {font-family:"'.$font.'-Italic";src:url("'.$path.'/'.$format.'/style_199441.'.$format.'");} 
+			
+			</style>';
+			}
 		    
 		    return $v;
 		}
