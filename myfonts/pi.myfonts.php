@@ -110,6 +110,17 @@ class Myfonts {
 		    
 		    }
 		    
+		    if ($agent == "Internet Explorer"){
+		    
+			    if ($version >= 9){
+	    		    $format = "woff";
+			    } else {
+	    		    $format = "eot";
+			    }
+		    
+		    }
+
+		    
 		    if ($format == "data-css") $format = "ttf";		    		    
 		    
 		    if ($format == "woff" || $format == "svg"){
